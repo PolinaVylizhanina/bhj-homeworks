@@ -7,13 +7,14 @@ menuLink.forEach(link => {
 
         if(subMenu) {            
             const activeMenu = document.querySelector('.menu_active')
-
-            if (activeMenu) {
-                activeMenu.classList.remove('menu_active')                
-            }
-
             subMenu.classList.add('menu_active')
-            return false
+
+            if (activeMenu) {                
+                activeMenu.classList.remove('menu_active')  
+                return false
+            } else {            
+                return false
+            }
         }
     }
 })
