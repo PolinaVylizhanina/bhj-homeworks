@@ -3,18 +3,17 @@ const menuLink = document.querySelectorAll('.menu__link');
 menuLink.forEach(link => {
     link.onclick = function () {
 
-        if(link.parentElement.querySelector('.menu_sub')) {
-            
+        const subMenu = link.closest('.menu__item').querySelector('.menu_sub')
+
+        if(subMenu) {            
             const activeMenu = document.querySelector('.menu_active')
 
             if (activeMenu) {
-                activeMenu.classList.remove('menu_active')
+                activeMenu.classList.remove('menu_active')                
             }
 
-            link.parentElement.querySelector('.menu_sub').classList.add('menu_active')
+            subMenu.classList.add('menu_active')
             return false
         }
     }
 })
-
-    
