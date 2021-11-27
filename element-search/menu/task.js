@@ -10,11 +10,9 @@ menuLink.forEach(link => {
             subMenu.classList.add('menu_active')
 
             if (activeMenu) {                
-                activeMenu.classList.remove('menu_active')  
-                return false
-            } else {            
-                return false
-            }
+                activeMenu.classList.remove('menu_active');
+              }
+              return false;
         }
     }
 })
