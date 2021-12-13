@@ -1,15 +1,16 @@
+
 const checkList=document.querySelectorAll('.interest__check')
 
 function getCheckList() { 
-    const checkChild = this.closest('label').nextElementSibling.querySelectorAll('.interest__check'); 
+    const checkAll = Array.from(this.closest('.interest').querySelectorAll('.interest__check'))
 
-    if (this.checked) {
-        for (let i = 0; i < checkChild.length; i++) {
-            checkChild[i].checked = true;
+    if (this.closest('ul.interests') === null & this.checked === true) {
+        for (let i = 0; i < checkAll.length; i++) {
+            checkAll[i].checked = true;
         }
-        } else {
-            for (let i = 0; i < checkChild.length; i++) {
-                checkChild[i].checked = false;
+        } else if (this.closest('ul.interests') === null & this.checked === false){
+            for (let i = 0; i < checkAll.length; i++) {
+                checkAll[i].checked = false;
         }
     }
 }
